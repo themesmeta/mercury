@@ -225,3 +225,28 @@ function twentynineteen_add_dropdown_icons( $output, $item, $depth, $args ) {
 	return $output;
 }
 add_filter( 'walker_nav_menu_start_el', 'twentynineteen_add_dropdown_icons', 10, 4 );
+
+/**
+ * Add a possibility to discover fengshui
+ */
+function twentynineteen_ajax_fengshui_discover() {
+	if ( ! empty( $_POST['date'] ) ) {
+		$solar_date         = explode( '/', $_POST['date'] );
+		$solar              = new Solar();
+		$solar->solar_day   = $solar_date[0];
+		$solar->solar_month = $solar_date[1];
+		$solar->solar_year  = $solar_date[2];
+		$lunar              = LunarSolarConverter::solar_to_lunar( $solar );
+
+		wp_send_json_success(
+			array(
+				'lunar' => $lunar,
+			)
+		);
+	} else {
+		wp_send_json_error();
+	}
+
+}
+add_action( 'wp_ajax_nopriv_twentynineteen_ajax_fengshui_discover', 'twentynineteen_ajax_fengshui_discover' );
+add_action( 'wp_ajax_twentynineteen_ajax_fengshui_discover', 'twentynineteen_ajax_fengshui_discover' );

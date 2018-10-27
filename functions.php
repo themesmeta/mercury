@@ -145,6 +145,7 @@ function twentynineteen_scripts() {
 	wp_enqueue_script( 'jqxcalendar', get_template_directory_uri() . '/js/jqwidgets/jqxcalendar.js', array(), '20151215', true );
 	wp_enqueue_script( 'globalize', get_template_directory_uri() . '/js/jqwidgets/globalization/globalize.js', array(), '20151215', true );
 
+	wp_enqueue_script( 'twentynineteen-ajax', get_template_directory_uri() . '/js/ajax.js', array(), '20151215', true );
 	wp_enqueue_script( 'twentynineteen-theme', get_template_directory_uri() . '/js/theme.js', array(), '20151215', true );
 
 	wp_enqueue_style( 'twentynineteen-print-style', get_template_directory_uri() . '/print.css', array(), wp_get_theme()->get( 'Version' ), 'print' );
@@ -156,6 +157,17 @@ function twentynineteen_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	// set variables for script
+	wp_localize_script(
+		'twentynineteen-ajax',
+		'settings',
+		array(
+			'ajaxurl'       => admin_url( 'admin-ajax.php' ),
+			'send_label'    => __( 'Send report', 'twentynineteen' ),
+			'error_message' => __( 'Sorry, something went wrong. Please try again', 'twentynineteen' ),
+		)
+	);
 }
 add_action( 'wp_enqueue_scripts', 'twentynineteen_scripts' );
 

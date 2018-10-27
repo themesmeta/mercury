@@ -34,25 +34,11 @@ get_header();
 						<a href="javascript:void(0);" class="btn btn-dark" id="btn-fengshui-discover"><?php _e( 'Xem ngay', 'twentynineteen' ); ?></a>
 					</p>
 				</div>
-				<div class="text-left">
-				<?php
-					$solar              = new Solar();
-					$solar->solar_year  = 1989;
-					$solar->solar_month = 1;
-					$solar->solar_day   = 31;
-					$lunar              = LunarSolarConverter::solar_to_lunar( $solar );
-					echo '<pre>', var_dump( $solar ), '</pre>';
-					echo '<pre>', var_dump( $lunar ), '</pre>';
-					$solar = LunarSolarConverter::lunar_to_solar( $lunar );
-					echo '<pre>', var_dump( $solar ), '</pre>';
-					echo '<pre>', var_dump( $lunar ), '</pre>';
-				?>
-				</div>
 			</div>
 			<div id="fengshui-display" class="fengshui-display text-center">
 				<h3 class="mb-2"><?php _e( 'Phong thủy của bạn', 'twentynineteen' ); ?></h3>
-				<p class="mb-0"><?php _e( 'Dương lịch', 'twentynineteen' ); ?>: <span><?php _e( '31/01/1989', 'twentynineteen' ); ?></span> – <?php _e( 'Âm lịch', 'twentynineteen' ); ?>: <span><?php _e( '24/12/1988', 'twentynineteen' ); ?></span></p>
-				<p><?php _e( 'Sinh mệnh', 'twentynineteen' ); ?>: <span><?php _e( 'đại lâm mộc', 'twentynineteen' ); ?></span> – <?php _e( 'Cung mệnh', 'twentynineteen' ); ?>: <span><?php _e( 'mộc', 'twentynineteen' ); ?></span></p>
+				<p class="mb-0"><?php _e( 'Dương lịch', 'twentynineteen' ); ?>: <span class="solar-date"><?php _e( '31/01/1989', 'twentynineteen' ); ?></span> – <?php _e( 'Âm lịch', 'twentynineteen' ); ?>: <span class="lunar-date"><?php _e( '24/12/1988', 'twentynineteen' ); ?></span></p>
+				<p><?php _e( 'Giới tính', 'twentynineteen' ); ?>: <span class="gender"><?php _e( 'Nam', 'twentynineteen' ); ?></span> – <?php _e( 'Sinh mệnh', 'twentynineteen' ); ?>: <span><?php _e( 'đại lâm mộc', 'twentynineteen' ); ?></span> – <?php _e( 'Cung mệnh', 'twentynineteen' ); ?>: <span><?php _e( 'mộc', 'twentynineteen' ); ?></span></p>
 			</div>
 
 		</main><!-- #main -->

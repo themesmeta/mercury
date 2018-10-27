@@ -1,0 +1,115 @@
+@import "bootstrap/functions";
+@import "mixins";
+@import "override";
+@import "bootstrap/bootstrap";
+@import "woocommerce";
+
+html {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: "liga", "kern";
+    text-rendering: optimizeLegibility;
+}
+body {
+    letter-spacing: $letter-spacing;
+}
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    text-transform: $headings-text-transform;
+}
+h5, h6,
+.h5, .h6 {
+    letter-spacing: $headings-letter-spacing;
+}
+input, textarea, select {
+	letter-spacing: $letter-spacing;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+textarea {
+	line-height: inherit !important;
+	padding-top: .75rem !important;
+	padding-bottom: .75rem !important;
+}
+img {
+	width: 100%;
+	height: auto;
+}
+
+// Site header
+.site-header {
+    .site-branding {
+        max-width: 100%;
+        padding-left: 4rem;
+        padding-right: 4rem;
+        margin: auto;
+        .navbar {
+            .navbar-nav {
+                > li > a {
+                    font-family: $headings-font-family;
+                    font-size: .875rem;
+                    line-height: 2rem;
+                    font-weight: $headings-font-weight;
+                    text-transform: uppercase;
+                    letter-spacing: $headings-letter-spacing;
+                }
+            }
+        }
+    }
+}
+.site-hero {
+    .site-hero-container {
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+}
+.fengshui-dicover {
+    max-width: 40rem;
+    margin-left: auto;
+    margin-right: auto;
+    .form-fengshui-discover {
+        margin-left: -.25rem;
+        margin-right: -.25rem;
+        .form-row {
+            margin: 0;
+            padding-left: .25rem;
+            padding-right: .25rem;
+            &.form-row-wide {
+                margin-top: .5rem;
+                a {
+                    display: block;
+                    width: 100%;
+                    font-family: $headings-font-family;
+                    font-size: $h5-font-size;
+                    letter-spacing: $headings-letter-spacing;
+                    text-transform: $headings-text-transform;
+                    color: $white;
+                }
+            }
+        }
+        #fengshui-birthday {
+            width: 100% !important;
+            height: auto !important;
+            border: $border-width solid $border-color;
+            border-radius: $input-border-radius;
+            box-sizing: border-box;
+            input {
+                padding: $input-padding-y $input-padding-x !important;
+                line-height: $input-btn-line-height;
+                outline: none;
+            }
+        }
+    }
+}
+.fengshui-display {
+    padding: 4rem 0;
+    background: #f7f3e8;
+    p {
+        span {
+            text-transform: uppercase;
+        }
+    }
+}

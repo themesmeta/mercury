@@ -15,10 +15,10 @@ get_header();
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
-			<div class="fengshui-dicover text-center py-md-6">
+			<div class="fengshui-dicover text-center py-md-8">
 				<h2 class="mb-1"><?php _e( 'Phong thủy', 'twentynineteen' ); ?></h2>
 				<h5><?php _e( 'Bắt đầu hành trình khám phá bản thân', 'twentynineteen' ); ?></h5>
-				<div class="form-fengshui-discover row">
+				<div class="form-fengshui-discover row mt-lg-4 mt-md-2">
 					<p class="col-6 form-row form-row-first validate-required" id="fengshui-birthday-field">
 						<label for="fengshui-birthday" class=""><?php _e( 'Ngày tháng năm sinh – dương lịch', 'twentynineteen' ); ?>&nbsp;<abbr class="required" title="required">*</abbr></label>
 						<input type="text" class="" name="fengshui-birthday" id="fengshui-birthday" placeholder="" value="">
@@ -37,8 +37,8 @@ get_header();
 			</div>
 			<div id="fengshui-display" class="fengshui-display text-center">
 				<h3 class="mb-2"><?php _e( 'Phong thủy của bạn', 'twentynineteen' ); ?></h3>
-				<p class="mb-0"><?php _e( 'Dương lịch', 'twentynineteen' ); ?>: <span class="solar-date"><?php _e( '31/01/1989', 'twentynineteen' ); ?></span> – <?php _e( 'Âm lịch', 'twentynineteen' ); ?>: <span class="lunar-date"><?php _e( '24/12/1988', 'twentynineteen' ); ?></span></p>
-				<p><?php _e( 'Giới tính', 'twentynineteen' ); ?>: <span class="gender"><?php _e( 'Nam', 'twentynineteen' ); ?></span> – <?php _e( 'Sinh mệnh', 'twentynineteen' ); ?>: <span><?php _e( 'đại lâm mộc', 'twentynineteen' ); ?></span> – <?php _e( 'Cung mệnh', 'twentynineteen' ); ?>: <span><?php _e( 'mộc', 'twentynineteen' ); ?></span></p>
+				<p class="mb-0"><?php _e( 'Dương lịch', 'twentynineteen' ); ?>: <span class="solar-date"><?php _e( '31/01/1989', 'twentynineteen' ); ?></span> – <?php _e( 'Âm lịch', 'twentynineteen' ); ?>: <span class="lunar-date"><?php _e( '24/12/1988', 'twentynineteen' ); ?></span> ( <span class="can-chi"><?php _e( 'MẬU THÌN', 'twentynineteen' ); ?></span> )</p>
+				<p><?php _e( 'Giới tính', 'twentynineteen' ); ?>: <span class="gender"><?php _e( 'Nam', 'twentynineteen' ); ?></span> – <?php _e( 'Sinh mệnh', 'twentynineteen' ); ?>: <span class="wu-xing"><?php _e( 'đại lâm mộc', 'twentynineteen' ); ?></span> – <?php _e( 'Cung mệnh', 'twentynineteen' ); ?>: <span class="cung-menh"><?php _e( 'mộc', 'twentynineteen' ); ?></span></p>
 			</div>
 
 		</main><!-- #main -->

@@ -237,16 +237,163 @@ function twentynineteen_ajax_fengshui_discover() {
 		$solar->solar_month = $solar_date[1];
 		$solar->solar_year  = $solar_date[2];
 		$lunar              = LunarSolarConverter::solar_to_lunar( $solar );
+		$gender             = $_POST['gender'];
+		$wu_xing            = twentynineteen_wu_xing_calculator( $lunar->lunar_year, $gender );
 
 		wp_send_json_success(
 			array(
-				'lunar' => $lunar,
+				'lunar'   => $lunar,
+				'wu_xing' => $wu_xing,
 			)
 		);
 	} else {
 		wp_send_json_error();
 	}
-
 }
 add_action( 'wp_ajax_nopriv_twentynineteen_ajax_fengshui_discover', 'twentynineteen_ajax_fengshui_discover' );
 add_action( 'wp_ajax_twentynineteen_ajax_fengshui_discover', 'twentynineteen_ajax_fengshui_discover' );
+
+/**
+ * Add a possibility to calculating "can - chi"
+ */
+function twentynineteen_wu_xing_calculator( $lunar_year, $gender ) {
+	$can_arr         = array(
+		__( 'Canh', 'twentynineteen' ),
+		__( 'Tân', 'twentynineteen' ),
+		__( 'Nhâm', 'twentynineteen' ),
+		__( 'Quý', 'twentynineteen' ),
+		__( 'Giáp', 'twentynineteen' ),
+		__( 'Ất', 'twentynineteen' ),
+		__( 'Bính', 'twentynineteen' ),
+		__( 'Đinh', 'twentynineteen' ),
+		__( 'Mậu', 'twentynineteen' ),
+		__( 'Kỷ', 'twentynineteen' ),
+	);
+	$chi_arr         = array(
+		__( 'Tý', 'twentynineteen' ),
+		__( 'Sửu', 'twentynineteen' ),
+		__( 'Dần', 'twentynineteen' ),
+		__( 'Mão', 'twentynineteen' ),
+		__( 'Thìn', 'twentynineteen' ),
+		__( 'Tỵ', 'twentynineteen' ),
+		__( 'Ngọ', 'twentynineteen' ),
+		__( 'Mùi', 'twentynineteen' ),
+		__( 'Thân', 'twentynineteen' ),
+		__( 'Dậu', 'twentynineteen' ),
+		__( 'Tuất', 'twentynineteen' ),
+		__( 'Hợi', 'twentynineteen' ),
+	);
+	$wu_xing_arr     = array(
+		'Giáp Tý'   => __( 'Hải trung kim', 'twentynineteen' ),
+		'Ất Sửu'    => __( 'Hải trung kim', 'twentynineteen' ),
+		'Bính Dần'  => __( 'Lô trung hỏa', 'twentynineteen' ),
+		'Đinh Mão'  => __( 'Lô trung hỏa', 'twentynineteen' ),
+		'Mậu Thìn'  => __( 'Đại lâm mộc', 'twentynineteen' ),
+		'Kỷ Tỵ'     => __( 'Đại lâm mộc', 'twentynineteen' ),
+		'Canh Ngọ'  => __( 'Lộ bàng thổ', 'twentynineteen' ),
+		'Tân Mùi'   => __( 'Lộ bàng thổ', 'twentynineteen' ),
+		'Nhâm Thân' => __( 'Kiếm phong kim', 'twentynineteen' ),
+		'Quý Dậu'   => __( 'Kiếm phong kim', 'twentynineteen' ),
+		'Giáp Tuất' => __( 'Sơn đầu hỏa', 'twentynineteen' ),
+		'Ất Hợi'    => __( 'Sơn đầu hỏa', 'twentynineteen' ),
+		'Bính Tý'   => __( 'Giản hạ thủy', 'twentynineteen' ),
+		'Đinh Sửu'  => __( 'Giản hạ thủy', 'twentynineteen' ),
+		'Mậu Dần'   => __( 'Thành đầu thổ', 'twentynineteen' ),
+		'Kỷ Mão'    => __( 'Thành đầu thổ', 'twentynineteen' ),
+		'Canh Thìn' => __( 'Bạch lạp kim', 'twentynineteen' ),
+		'Tân Tỵ'    => __( 'Bạch lạp kim', 'twentynineteen' ),
+		'Nhâm Ngọ'  => __( 'Dương liễu mộc', 'twentynineteen' ),
+		'Quý Mùi'   => __( 'Dương liễu mộc', 'twentynineteen' ),
+		'Giáp Thân' => __( 'Tuyền trung thủy', 'twentynineteen' ),
+		'Ất Dậu'    => __( 'Tuyền trung thủy', 'twentynineteen' ),
+		'Bính Tuất' => __( 'Ốc thượng thổ', 'twentynineteen' ),
+		'Đinh Hợi'  => __( 'Ốc thượng thổ', 'twentynineteen' ),
+		'Mậu Tý'    => __( 'Bích lôi hỏa', 'twentynineteen' ),
+		'Kỷ Sửu'    => __( 'Bích lôi hỏa', 'twentynineteen' ),
+		'Canh Dần'  => __( 'Tùng bách mộc', 'twentynineteen' ),
+		'Tân Mão'   => __( 'Tùng bách mộc', 'twentynineteen' ),
+		'Nhâm Thìn' => __( 'Trường lưu thủy', 'twentynineteen' ),
+		'Quý Tỵ'    => __( 'Trường lưu thủy', 'twentynineteen' ),
+		'Giáp Ngọ'  => __( 'Sa trung kim', 'twentynineteen' ),
+		'Ất Mùi'    => __( 'Sa trung kim', 'twentynineteen' ),
+		'Bính Thân' => __( 'Sơn hạ hỏa', 'twentynineteen' ),
+		'Đinh Dậu'  => __( 'Sơn hạ hỏa', 'twentynineteen' ),
+		'Mậu Tuất'  => __( 'Bình địa mộc', 'twentynineteen' ),
+		'Kỷ Hợi'    => __( 'Bình địa mộc', 'twentynineteen' ),
+		'Canh Tý'   => __( 'Bích thượng thổ', 'twentynineteen' ),
+		'Tân Sửu'   => __( 'Bích thượng thổ', 'twentynineteen' ),
+		'Nhâm Dần'  => __( 'Kim bạc kim', 'twentynineteen' ),
+		'Quý Mão'   => __( 'Kim bạc kim', 'twentynineteen' ),
+		'Giáp Thìn' => __( 'Phú đăng hỏa', 'twentynineteen' ),
+		'Ất Tỵ'     => __( 'Phú đăng hỏa', 'twentynineteen' ),
+		'Bính Ngọ'  => __( 'Thiên hà thủy', 'twentynineteen' ),
+		'Đinh Mùi'  => __( 'Thiên hà thủy', 'twentynineteen' ),
+		'Mậu Thân'  => __( 'Đại dịch thổ', 'twentynineteen' ),
+		'Kỷ Dậu'    => __( 'Đại dịch thổ', 'twentynineteen' ),
+		'Canh Tuất' => __( 'Thoa xuyến kim', 'twentynineteen' ),
+		'Tân Hợi'   => __( 'Thoa xuyến kim', 'twentynineteen' ),
+		'Nhâm Tý'   => __( 'Tang thạch mộc', 'twentynineteen' ),
+		'Quý Sửu'   => __( 'Tang thạch mộc', 'twentynineteen' ),
+		'Giáp Dần'  => __( 'Đại khê thủy', 'twentynineteen' ),
+		'Ất Mão'    => __( 'Đại khê thủy', 'twentynineteen' ),
+		'Bính Thìn' => __( 'Sa trung thổ', 'twentynineteen' ),
+		'Đinh Tỵ'   => __( 'Sa trung thổ', 'twentynineteen' ),
+		'Mậu Ngọ'   => __( 'Thiên thượng hỏa', 'twentynineteen' ),
+		'Kỷ Mùi'    => __( 'Thiên thượng hỏa', 'twentynineteen' ),
+		'Canh Thân' => __( 'Thạch Lựu mộc', 'twentynineteen' ),
+		'Tân Dậu'   => __( 'Thạch Lựu mộc', 'twentynineteen' ),
+		'Nhâm Tuất' => __( 'Đại hải thủy', 'twentynineteen' ),
+		'Quý Hợi'   => __( 'Đại hải thủy', 'twentynineteen' ),
+	);
+	$male_cungmenh   = array(
+		__( 'Khôn Thổ', 'twentynineteen' ),
+		__( 'Khảm Thủy', 'twentynineteen' ),
+		__( 'Ly Hỏa', 'twentynineteen' ),
+		__( 'Cấn Thổ', 'twentynineteen' ),
+		__( 'Đoài Kim', 'twentynineteen' ),
+		__( 'Càn Kim', 'twentynineteen' ),
+		__( 'Khôn Thổ', 'twentynineteen' ),
+		__( 'Tốn Mộc', 'twentynineteen' ),
+		__( 'Chấn Mộc', 'twentynineteen' ),
+	);
+	$female_cungmenh = array(
+		__( 'Tốn Mộc', 'twentynineteen' ),
+		__( 'Cấn Thổ', 'twentynineteen' ),
+		__( 'Càn Kim', 'twentynineteen' ),
+		__( 'Đoài Kim', 'twentynineteen' ),
+		__( 'Cấn Thổ', 'twentynineteen' ),
+		__( 'Ly Hỏa', 'twentynineteen' ),
+		__( 'Khảm Thủy', 'twentynineteen' ),
+		__( 'Khôn Thổ', 'twentynineteen' ),
+		__( 'Chấn Mộc', 'twentynineteen' ),
+	);
+	// calculating "can"
+	$tmp       = str_split( $lunar_year );
+	$can_index = end( $tmp ); // int
+	$can       = $can_arr[ $can_index ];
+	// calculating "chi"
+	$y2k = substr( $lunar_year, -2, strlen( $lunar_year ) );
+	if ( $lunar_year >= 2000 ) {
+		$y2k = $lunar_year - 1900;
+	}
+	$chi_index = $y2k % 12;
+	$chi       = $chi_arr[ $chi_index ];
+	// calculating "cungmenh"
+	$year_total = 0;
+	foreach ( $tmp as $key => $value ) {
+		$year_total += $value;
+	}
+	$cung_menh = '';
+	if ( 'male' === $gender ) {
+		$cung_menh = $male_cungmenh[ $year_total % 9 ];
+	} elseif ( 'female' === $gender ) {
+		$cung_menh = $female_cungmenh[ $year_total % 9 ];
+	}
+	// return the result as string
+	$output = array(
+		'can_chi'   => $can . ' ' . $chi,
+		'wu_xing'   => $wu_xing_arr[ $can . ' ' . $chi ],
+		'cung_menh' => $cung_menh,
+	);
+	return $output;
+}

@@ -105,11 +105,71 @@ img {
     }
 }
 .fengshui-display {
-    padding: 4rem 0;
+    position: relative;
+    max-height: 1000px;
     background: #f7f3e8;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in;
     p {
         span {
             text-transform: uppercase;
         }
     }
+    .row .row {
+        margin-left: -.125rem;
+        margin-right: -.125rem;
+        -ms-justify-content: center;
+        justify-content: center;
+        > div {
+            padding-left: .125rem;
+            padding-right: .125rem;
+        }
+    }
+    .fengshui-color-swatch {
+        display: block;
+        width: 100%;
+        height: 1.375rem;
+        //border-radius: $input-border-radius;
+        &[data-color=black] {
+            background: $black;
+        }
+        &[data-color=blue] {
+            background: #039BE5;
+        }
+        &[data-color=green] {
+            background: #4CAF50;
+        }
+        &[data-color=yellow] {
+            background: #FDD835;
+        }
+        &[data-color=brown] {
+            background: #795548;
+        }
+        &[data-color=red] {
+            background: #E53935;
+        }
+        &[data-color=pink] {
+            background: #7B1FA2;
+        }
+        &[data-color=white] {
+            background: $white;
+        }
+        &[data-color=gray] {
+            background: #9E9E9E;
+        }
+    }
+    .btn-section-close {
+        position: absolute;
+        top: 2rem;
+        right: 8vw;
+    }
+    &.section-close {
+        max-height: 0;
+        transition: max-height 0.3s ease-out;
+    }
+}
+
+.site-footer {
+    color: $white;
+    background: $black;
 }

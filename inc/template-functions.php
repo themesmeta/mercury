@@ -244,6 +244,44 @@ function twentynineteen_ajax_fengshui_discover() {
 			array(
 				'lunar'   => $lunar,
 				'wu_xing' => $wu_xing,
+				'color'   => array(
+					'black'  => array(
+						'code' => 'black',
+						'name' => __( 'Đen', 'twentynineteen' ),
+					),
+					'blue'   => array(
+						'code' => 'blue',
+						'name' => __( 'Xanh biển', 'twentynineteen' ),
+					),
+					'green'  => array(
+						'code' => 'green',
+						'name' => __( 'Xanh lá', 'twentynineteen' ),
+					),
+					'yellow' => array(
+						'code' => 'yellow',
+						'name' => __( 'Vàng', 'twentynineteen' ),
+					),
+					'brown'  => array(
+						'code' => 'brown',
+						'name' => __( 'Nâu', 'twentynineteen' ),
+					),
+					'red'    => array(
+						'code' => 'red',
+						'name' => __( 'Đỏ', 'twentynineteen' ),
+					),
+					'pink'   => array(
+						'code' => 'pink',
+						'name' => __( 'Hồng – Tím', 'twentynineteen' ),
+					),
+					'gray'   => array(
+						'code' => 'gray',
+						'name' => __( 'Xám – Ghi xám', 'twentynineteen' ),
+					),
+					'white'  => array(
+						'code' => 'white',
+						'name' => __( 'Trắng', 'twentynineteen' ),
+					),
+				),
 			)
 		);
 	} else {
@@ -389,11 +427,53 @@ function twentynineteen_wu_xing_calculator( $lunar_year, $gender ) {
 	} elseif ( 'female' === $gender ) {
 		$cung_menh = $female_cungmenh[ $year_total % 9 ];
 	}
+	// calculating color suit
+	$color_suit = array();
+	if ( $cung_menh ) {
+		$cung_menh_arr = explode( ' ', $cung_menh );
+		if ( 'Kim' == $cung_menh_arr[1] ) {
+			$color_suit = array(
+				'tuong_sinh' => 'yellow,brown',
+				'tuong_hop'  => 'white,gray',
+				'che_khac'   => 'green',
+				'bi_khac'    => 'red,pink',
+			);
+		} elseif ( 'Thủy' == $cung_menh_arr[1] ) {
+			$color_suit = array(
+				'tuong_sinh' => 'white,gray',
+				'tuong_hop'  => 'black,blue',
+				'che_khac'   => 'red,pink',
+				'bi_khac'    => 'yellow,brown',
+			);
+		} elseif ( 'Mộc' == $cung_menh_arr[1] ) {
+			$color_suit = array(
+				'tuong_sinh' => 'black,blue',
+				'tuong_hop'  => 'green',
+				'che_khac'   => 'yellow,brown',
+				'bi_khac'    => 'white,gray',
+			);
+		} elseif ( 'Hỏa' == $cung_menh_arr[1] ) {
+			$color_suit = array(
+				'tuong_sinh' => 'green',
+				'tuong_hop'  => 'red,pink',
+				'che_khac'   => 'white,gray',
+				'bi_khac'    => 'black,blue',
+			);
+		} elseif ( 'Thổ' == $cung_menh_arr[1] ) {
+			$color_suit = array(
+				'tuong_sinh' => 'red,pink',
+				'tuong_hop'  => 'yellow,brown',
+				'che_khac'   => 'black,blue',
+				'bi_khac'    => 'green',
+			);
+		}
+	}
 	// return the result as string
 	$output = array(
-		'can_chi'   => $can . ' ' . $chi,
-		'wu_xing'   => $wu_xing_arr[ $can . ' ' . $chi ],
-		'cung_menh' => $cung_menh,
+		'can_chi'    => $can . ' ' . $chi,
+		'wu_xing'    => $wu_xing_arr[ $can . ' ' . $chi ],
+		'cung_menh'  => $cung_menh,
+		'color_suit' => array_values( $color_suit ),
 	);
 	return $output;
 }

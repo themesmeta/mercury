@@ -35,10 +35,65 @@ get_header();
 					</p>
 				</div>
 			</div>
-			<div id="fengshui-display" class="fengshui-display text-center">
-				<h3 class="mb-2"><?php _e( 'Phong thủy của bạn', 'twentynineteen' ); ?></h3>
-				<p class="mb-0"><?php _e( 'Dương lịch', 'twentynineteen' ); ?>: <span class="solar-date"><?php _e( '31/01/1989', 'twentynineteen' ); ?></span> – <?php _e( 'Âm lịch', 'twentynineteen' ); ?>: <span class="lunar-date"><?php _e( '24/12/1988', 'twentynineteen' ); ?></span> ( <span class="can-chi"><?php _e( 'MẬU THÌN', 'twentynineteen' ); ?></span> )</p>
-				<p><?php _e( 'Giới tính', 'twentynineteen' ); ?>: <span class="gender"><?php _e( 'Nam', 'twentynineteen' ); ?></span> – <?php _e( 'Sinh mệnh', 'twentynineteen' ); ?>: <span class="wu-xing"><?php _e( 'đại lâm mộc', 'twentynineteen' ); ?></span> – <?php _e( 'Cung mệnh', 'twentynineteen' ); ?>: <span class="cung-menh"><?php _e( 'mộc', 'twentynineteen' ); ?></span></p>
+			<div id="fengshui-display" class="fengshui-display text-center section-close">
+				<div class="container py-lg-6 py-md-4 py-sm-2">
+					<h3 class="mb-2"><?php _e( 'Phong thủy của bạn', 'twentynineteen' ); ?></h3>
+					<p class="mb-0"><?php _e( 'Dương lịch', 'twentynineteen' ); ?>: <span class="solar-date"><?php _e( 'unknown', 'twentynineteen' ); ?></span> – <?php _e( 'Âm lịch', 'twentynineteen' ); ?>: <span class="lunar-date"><?php _e( 'unknown', 'twentynineteen' ); ?></span> ( <span class="can-chi"><?php _e( 'unknown', 'twentynineteen' ); ?></span> )</p>
+					<p><?php _e( 'Giới tính', 'twentynineteen' ); ?>: <span class="gender"><?php _e( 'unknown', 'twentynineteen' ); ?></span> – <?php _e( 'Sinh mệnh', 'twentynineteen' ); ?>: <span class="wu-xing"><?php _e( 'unknown', 'twentynineteen' ); ?></span> – <?php _e( 'Cung mệnh', 'twentynineteen' ); ?>: <span class="cung-menh"><?php _e( 'unknown', 'twentynineteen' ); ?></span></p>
+					<h4 class="mt-lg-6 mb-lg-4 my-md-3"><?php _e( 'Màu sắc phong thủy với cung mệnh', 'twentynineteen' ); ?> <span class="cung-menh"><?php _e( 'unknown', 'twentynineteen' ); ?></span></h4>
+					<div id="fengshui-display-color" class="row fengshui-display-color">
+						<div class="col-md-3 tuong-sinh">
+							<h5><?php _e( 'Tương sinh', 'twentynineteen' ); ?></h5>
+							<div class="row">
+								<div class="col-6">
+									<span class="fengshui-color-swatch" data-color="black"></span>
+									<small class="text-uppercase"><?php _e( 'Đen', 'twentynineteen' ); ?></small>
+								</div>
+								<div class="col-6">
+									<span class="fengshui-color-swatch" data-color="blue"></span>
+									<small class="text-uppercase"><?php _e( 'Xanh biển', 'twentynineteen' ); ?></small>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3 tuong-hop">
+							<h5><?php _e( 'Tương hợp', 'twentynineteen' ); ?></h5>
+							<div class="row">
+								<div class="col-6">
+									<span class="fengshui-color-swatch" data-color="green"></span>
+									<small class="text-uppercase"><?php _e( 'Xanh lá', 'twentynineteen' ); ?></small>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3 che-khac">
+							<h5><?php _e( 'Chế khắc', 'twentynineteen' ); ?></h5>
+							<div class="row">
+								<div class="col-6">
+									<span class="fengshui-color-swatch" data-color="yellow"></span>
+									<small class="text-uppercase"><?php _e( 'Vàng', 'twentynineteen' ); ?></small>
+								</div>
+								<div class="col-6">
+									<span class="fengshui-color-swatch" data-color="brown"></span>
+									<small class="text-uppercase"><?php _e( 'Nâu', 'twentynineteen' ); ?></small>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3 bi-khac">
+							<h5><?php _e( 'Bị khắc', 'twentynineteen' ); ?></h5>
+							<div class="row">
+								<div class="col-6">
+									<span class="fengshui-color-swatch" data-color="white"></span>
+									<small class="text-uppercase"><?php _e( 'Trắng', 'twentynineteen' ); ?></small>
+								</div>
+								<div class="col-6">
+									<span class="fengshui-color-swatch" data-color="gray"></span>
+									<small class="text-uppercase"><?php _e( 'Xám – Ghi xám', 'twentynineteen' ); ?></small>
+								</div>
+							</div>
+						</div>
+					</div>
+					<h4 class="mt-lg-6 mb-lg-4 my-md-3"><?php _e( 'Đá dành cho cung mệnh', 'twentynineteen' ); ?> <span class="cung-menh"><?php _e( 'unknown', 'twentynineteen' ); ?></span></h4>
+				</div>
+				<a class="btn-section-close" href="#"><?php _e( 'Close', 'twentynineteen' ); ?></a>
 			</div>
 
 		</main><!-- #main -->

@@ -291,7 +291,7 @@ $font-weight-bolder:          bolder !default;
 
 $font-weight-base:            $font-weight-normal !default;
 $line-height-base:            1.7;
-$letter-spacing:              .125px;
+$letter-spacing:              .25px;
 
 $h1-font-size:                2.75rem;
 $h2-font-size:                2.25rem;
@@ -306,7 +306,7 @@ $headings-font-weight:        400;
 $headings-line-height:        1.22;
 $headings-color:              inherit !default;
 $headings-text-transform:     uppercase;
-$headings-letter-spacing:     .1em;
+$headings-letter-spacing:     1px;
 
 $display1-size:               6rem !default;
 $display2-size:               5.5rem !default;
@@ -337,7 +337,7 @@ $mark-padding:                .2em !default;
 
 $dt-font-weight:              $font-weight-bold !default;
 
-$kbd-box-shadow:              inset 0 -.1rem 0 rgba($black, .25) !default;
+$kbd-box-shadow:              none;
 $nested-kbd-font-weight:      $font-weight-bold !default;
 
 $list-inline-padding:         .5rem !default;
@@ -388,7 +388,7 @@ $input-btn-padding-x:         1rem;
 $input-btn-font-size:         $font-size-base !default;
 $input-btn-line-height:       2.75rem;
 
-$input-btn-focus-width:       .2rem !default;
+$input-btn-focus-width:       0;
 $input-btn-focus-color:       $black;
 $input-btn-focus-box-shadow:  none;
 
@@ -578,11 +578,11 @@ $custom-select-feedback-icon-size:          ($input-height-inner / 2) ($input-he
 $custom-select-border-width:        $input-border-width !default;
 $custom-select-border-color:        $input-border-color !default;
 $custom-select-border-radius:       $border-radius !default;
-$custom-select-box-shadow:          inset 0 1px 2px rgba($black, .075) !default;
+$custom-select-box-shadow:          none;
 
 $custom-select-focus-border-color:  $input-focus-border-color !default;
 $custom-select-focus-width:         $input-focus-width !default;
-$custom-select-focus-box-shadow:    0 0 0 $custom-select-focus-width rgba($custom-select-focus-border-color, .5) !default;
+$custom-select-focus-box-shadow:    none;
 
 $custom-select-padding-y-sm:        $input-padding-y-sm !default;
 $custom-select-padding-x-sm:        $input-padding-x-sm !default;
@@ -1029,7 +1029,7 @@ $carousel-transition:                transform .6s ease !default; // Define tran
 $close-font-size:                   $font-size-base * 1.5 !default;
 $close-font-weight:                 $font-weight-bold !default;
 $close-color:                       $black !default;
-$close-text-shadow:                 0 1px 0 $white !default;
+$close-text-shadow:                 none;
 
 
 // Code

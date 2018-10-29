@@ -163,9 +163,14 @@ function twentynineteen_scripts() {
 		'twentynineteen-ajax',
 		'settings',
 		array(
-			'ajaxurl'       => admin_url( 'admin-ajax.php' ),
-			'send_label'    => __( 'Send report', 'twentynineteen' ),
-			'error_message' => __( 'Sorry, something went wrong. Please try again', 'twentynineteen' ),
+			'ajaxurl'         => admin_url( 'admin-ajax.php' ),
+			'l18n_color_suit' => array(
+				__( 'Tương sinh', 'twentynineteen' ),
+				__( 'Tương hợp', 'twentynineteen' ),
+				__( 'Chế khắc', 'twentynineteen' ),
+				__( 'Bị khắc', 'twentynineteen' ),
+			),
+			'error_message'   => __( 'Sorry, something went wrong. Please try again', 'twentynineteen' ),
 		)
 	);
 }

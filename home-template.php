@@ -16,23 +16,25 @@ get_header();
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 			<div class="fengshui-dicover text-center py-md-8">
-				<h2 class="mb-1"><?php _e( 'Phong thủy', 'twentynineteen' ); ?></h2>
-				<h5><?php _e( 'Bắt đầu hành trình khám phá bản thân', 'twentynineteen' ); ?></h5>
-				<div class="form-fengshui-discover row mt-lg-4 mt-md-2">
-					<p class="col-6 form-row form-row-first validate-required" id="fengshui-birthday-field">
-						<label for="fengshui-birthday" class=""><?php _e( 'Ngày tháng năm sinh – dương lịch', 'twentynineteen' ); ?>&nbsp;<abbr class="required" title="required">*</abbr></label>
-						<input type="text" class="" name="fengshui-birthday" id="fengshui-birthday" placeholder="" value="">
-					</p>
-					<p class="col-6 form-row form-row-last validate-required" id="fengshui-gender-field">
-						<label for="fengshui-gender" class=""><?php _e( 'Giới tính', 'twentynineteen' ); ?>&nbsp;<abbr class="required" title="required">*</abbr></label>
-						<select type="text" class="form-control" name="fengshui-gender" id="fengshui-gender">
-							<option value="male"><?php _e( 'Nam', 'twentynineteen' ); ?></option>
-							<option value="female"><?php _e( 'Nữ', 'twentynineteen' ); ?></option>
-						</select>
-					</p>
-					<p class="col-12 form-row form-row-wide">
-						<a href="javascript:void(0);" class="btn btn-dark" id="btn-fengshui-discover"><?php _e( 'Xem ngay', 'twentynineteen' ); ?></a>
-					</p>
+				<div class="container">
+					<h2 class="mb-1"><?php _e( 'Phong thủy', 'twentynineteen' ); ?></h2>
+					<h5><?php _e( 'Bắt đầu hành trình khám phá bản thân', 'twentynineteen' ); ?></h5>
+					<div class="form-fengshui-discover row mt-lg-4 mt-md-2">
+						<p class="col-6 form-row form-row-first validate-required" id="fengshui-birthday-field">
+							<label for="fengshui-birthday" class=""><?php _e( 'Ngày tháng năm sinh – dương lịch', 'twentynineteen' ); ?>&nbsp;<abbr class="required" title="required">*</abbr></label>
+							<input type="text" class="" name="fengshui-birthday" id="fengshui-birthday" placeholder="" value="">
+						</p>
+						<p class="col-6 form-row form-row-last validate-required" id="fengshui-gender-field">
+							<label for="fengshui-gender" class=""><?php _e( 'Giới tính', 'twentynineteen' ); ?>&nbsp;<abbr class="required" title="required">*</abbr></label>
+							<select type="text" class="form-control" name="fengshui-gender" id="fengshui-gender">
+								<option value="male"><?php _e( 'Nam', 'twentynineteen' ); ?></option>
+								<option value="female"><?php _e( 'Nữ', 'twentynineteen' ); ?></option>
+							</select>
+						</p>
+						<p class="col-12 form-row form-row-wide">
+							<a href="javascript:void(0);" class="btn btn-dark" id="btn-fengshui-discover"><?php _e( 'Xem ngay', 'twentynineteen' ); ?></a>
+						</p>
+					</div>
 				</div>
 			</div>
 			<div id="fengshui-display" class="fengshui-display text-center section-close">
@@ -95,7 +97,12 @@ get_header();
 				</div>
 				<a class="btn-section-close" href="#"><?php _e( 'Close', 'twentynineteen' ); ?></a>
 			</div>
-
+			<div class="popular-products py-md-8">
+				<div class="container-fluid">
+					<h2 class="mb-4 text-center"><?php _e( 'Sản phẩm nổi bật', 'twentynineteen' ); ?></h2>
+					<?php echo do_shortcode( '[products limit="4" columns="4" orderby="popularity"]' ); ?>
+				</div>
+			</div>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

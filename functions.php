@@ -131,9 +131,8 @@ add_action( 'after_setup_theme', 'twentynineteen_content_width', 0 );
  * Enqueue scripts and styles.
  */
 function twentynineteen_scripts() {
+	wp_enqueue_style( 'twentynineteen-main-style', get_template_directory_uri() . '/assets/css/style.css' );
 	wp_enqueue_style( 'twentynineteen-style', get_stylesheet_uri() );
-
-	wp_style_add_data( 'twentynineteen-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'twentynineteen-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 

@@ -1,0 +1,392 @@
+// Color system
+$blue:    	#1565c0;
+$indigo:  	#283593;
+$purple:  	#6a1b9a;
+$pink:    	#c2185b;
+$red:     	#d32f2f;
+$orange:  	#ef6c00;
+$yellow:  	#fbc02d;
+$green:   	#388e3c;
+$teal:    	#009688;
+$cyan:    	#00bcd4;
+$white:		#ffffff;
+
+$colors: ();
+// stylelint-disable-next-line scss/dollar-variable-default
+$colors: map-merge(
+  (
+    "blue":       $blue,
+    "indigo":     $indigo,
+    "purple":     $purple,
+    "pink":       $pink,
+    "red":        $red,
+    "orange":     $orange,
+    "yellow":     $yellow,
+    "green":      $green,
+    "teal":       $teal,
+    "cyan":       $cyan,
+    "white":      $white,
+    "gray":       $gray-600,
+    "gray-dark":  $gray-800
+  ),
+  $colors
+);
+
+$primary:       #f26e22;
+$secondary:     $black;
+$success:       $green;
+$info:          $cyan;
+$warning:       $yellow;
+$danger:        $red;
+$light:         $white;
+$dark:          $black;
+$smoke:			lighten($black, 93.5%);
+$gray:			lighten($black, 68%);
+
+$theme-colors: (
+	"dark": 	$dark,
+	"smoke": 	$smoke,
+	"gray":		$gray
+);
+
+// Spacing
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+// You can add more entries to the $spacers map, should you need more variation.
+
+$spacer: .75rem;
+$spacers: ();
+// stylelint-disable-next-line scss/dollar-variable-default
+$spacers: map-merge(
+	(
+		0: 0,
+		1: $spacer,
+		2: ($spacer * 2),
+		3: ($spacer * 3),
+		4: ($spacer * 4),
+		5: ($spacer * 5),
+		6: ($spacer * 6),
+		7: ($spacer * 7),
+		8: ($spacer * 8),
+		9: ($spacer * 9),
+		10: ($spacer * 10)
+	),
+	$spacers
+);
+
+$site-title-align:                		center;
+$site-title-padding-y:            		3rem;
+$size-site-margins:               		calc(10% + 60px);
+$size-site-tablet-content:        		calc(8 * (100vw / 12) - 28px);
+$size-site-desktop-content:       		calc(6 * (100vw / 12) - 28px);
+
+// Grid containers
+
+$container-fluid-sm-padding-x:			1.25rem;
+$container-fluid-padding-x:				map-get($spacers, 4);
+
+// Body
+//
+// Settings for the `<body>` element.
+
+$body-bg:                				$white;
+$body-color:          					$black;
+$body-color-fade: 						rgba($body-color, .4);
+
+// Links
+//
+// Style anchor elements.
+
+$link-color:               				$body-color;
+$link-decoration:             			none;
+$link-hover-color:              		$body-color;
+$link-hover-decoration:          		none;
+// Darken percentage for links with `.text-*` class (e.g. `.text-success`)
+$emphasized-link-hover-darken-percentage: 15% !default;
+
+$paragraph-margin-bottom:  		  		1.25em;
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$grid-breakpoints: map-merge(
+	(
+		xs: 0,
+		sm: 600px,
+		md: 768px,
+		lg: 1168px,
+		xl: 1379px
+	),
+	$grid-breakpoints
+);
+
+@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+@include _assert-starts-at-zero($grid-breakpoints);
+
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+
+$grid-columns:                			12;
+$grid-gutter-width:           			1.5rem;
+
+$ease-out-circ:							cubic-bezier(0,.5,.4,1);
+$ease-in-out-circ:						cubic-bezier(.9,.1,.1,.8);
+$ease-out-expo:							cubic-bezier(0,.6,.2,1);
+$ease-in-out-expo:						cubic-bezier(.9,0,.1,1);
+
+$transition-duration-base:				.3s;
+
+$border-width:                    		1px;
+$border-width-thick:              		2px;
+$border-color:                    		rgba($black, .1);
+$border-color-dark:                    	$black;
+
+$border-radius:               			0;
+$border-radius-lg:            			$border-radius;
+$border-radius-sm:            			$border-radius;
+
+// Fonts
+//
+// Font, line-height, and color for body text, headings, and more.
+
+@include font-face(TijiCaption, "../fonts/tijicaption-webfont", 400, normal);
+@include font-face(TijiBody, "../fonts/tijibodyregular-webfont", 400, normal);
+@include font-face(TijiBody, "../fonts/tijibodyoblique-webfont", 400, italic);
+@include font-face(TijiBody, "../fonts/tijibodybold-webfont", 700, normal);
+@include font-face(TijiBody, "../fonts/tijibodyboldoblique-webfont", 700, italic);
+
+// stylelint-disable value-keyword-case
+$font-family-sans-serif:      			TijiBody, Helvetica, Arial, sans-serif;
+$font-family-monospace:       			Inconsolata, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+$font-family-serif:           			Butler Stencil, Georgia, serif;
+// stylelint-enable value-keyword-case
+
+$font-family-base:            			$font-family-sans-serif;
+$font-size-base:              			.94rem;
+$font-size-xs:                			.8rem;
+$font-size-sm:                			.86rem;
+$font-size-lg:                			1.12rem;
+$font-size-xl:                			1.18rem;
+$font-size-ratio:                   	1.125;
+
+$font-weight-lighter:         			100;
+$font-weight-light:           			300;
+$font-weight-normal:          			400;
+$font-weight-medium:          			500;
+$font-weight-bold:            			700 !default;
+$font-weight-bolder:          			bolder !default;
+
+$font-weight-base:            			$font-weight-normal;
+$line-height-base:            			1.72;
+$letter-spacing-base:         			.03em;
+$pre-letter-spacing:               		0;
+
+$h1-font-size:                			2.75rem;
+$h2-font-size:                			2.25rem;
+$h3-font-size:                			1.875rem;
+$h4-font-size:                			1.375rem;
+$h5-font-size:                			1.0625rem;
+$h6-font-size:                			.75rem;
+
+$headings-margin-bottom:      			.9em;
+$headings-font-family:        			TijiCaption;
+$headings-font-weight:        			$font-weight-normal;
+$headings-line-height:        			1.26;
+$headings-color:              			inherit !default;
+$headings-letter-spacing:     			.05em;
+$headings-text-transform:				none;
+
+$display1-size:               			4.5rem;
+$display2-size:               			4rem;
+$display3-size:               			3.5rem;
+$display4-size:               			3rem;
+
+$display1-weight:             			300 !default;
+$display2-weight:             			300 !default;
+$display3-weight:             			300 !default;
+$display4-weight:             			300 !default;
+$display-line-height:         			$headings-line-height !default;
+
+$lead-font-size:              			($font-size-base * 1.25) !default;
+$lead-font-weight:            			300 !default;
+
+$small-font-size:             			80% !default;
+
+// Tables
+//
+// Customizes the `.table` component with basic values, each used across all table variations.
+
+$table-cell-padding-x:					1.5rem;
+$table-cell-padding-y:					1rem;
+$table-cell-padding:         			$table-cell-padding-y $table-cell-padding-x;
+$table-cell-padding-sm:       			$table-cell-padding-y / 1.5 $table-cell-padding-x / 1.5;
+$table-border-color:          			$border-color;
+
+// Navs
+
+$nav-link-padding-y:                	.5rem;
+$nav-link-padding-x:                	1rem !default;
+
+// Navbar
+
+$navbar-padding-y:                  	.5rem;
+$navbar-padding-x:                  	0;
+
+$navbar-nav-link-padding-x:         	1rem;
+
+$navbar-brand-font-size:            	$font-size-lg !default;
+// Compute the navbar-brand padding-y so the navbar-brand will have the same height as navbar-text and nav-link
+$nav-link-height:                   	($font-size-base * $line-height-base + $nav-link-padding-y * 2) !default;
+$navbar-brand-height:               	auto;
+$navbar-brand-padding-y:            	0;
+
+$navbar-nav-link-font-family:       	$font-family-sans-serif;
+$navbar-nav-link-font-size:         	.79rem;
+$navbar-nav-link-font-weight:       	$font-weight-bold;
+$navbar-nav-link-line-height:       	2rem;
+$navbar-nav-link-text-transform:    	uppercase;
+$navbar-nav-link-letter-spacing:    	.5px;
+
+$navbar-dark-color:                 	rgba($white, .8);
+$navbar-dark-hover-color:           	$white;
+$navbar-dark-active-color:          	$white !default;
+$navbar-dark-disabled-color:        	rgba($white, .25) !default;
+$navbar-dark-toggler-icon-bg:       	str-replace(url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='#{$navbar-dark-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"), "#", "%23") !default;
+$navbar-dark-toggler-border-color:  	rgba($white, .1) !default;
+
+$navbar-light-color:                	$body-color;
+$navbar-light-hover-color:          	$body-color;
+$navbar-light-active-color:         	$body-color;
+$navbar-light-disabled-color:       	rgba($black, .3) !default;
+$navbar-light-toggler-icon-bg:      	str-replace(url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='#{$navbar-light-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"), "#", "%23") !default;
+$navbar-light-toggler-border-color: 	rgba($black, .1) !default;
+
+// Modals
+
+$modal-drawer-width:          			28rem !default;
+$modal-drawer-header-height:  			4.25rem !default;
+$modal-drawer-footer-height:  			4.25rem !default;
+
+// Buttons + Forms
+//
+// Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
+
+$input-btn-padding-y:         			0;
+$input-btn-padding-x:         			1.25rem;
+$input-btn-font-size:         			.76rem;
+$input-btn-line-height:       			2.5rem;
+
+$input-btn-focus-width:       			0;
+$input-btn-focus-color:       			rgba($component-active-bg, .25) !default;
+$input-btn-focus-box-shadow:  			none;
+
+$input-btn-padding-y-sm:      			0;
+$input-btn-padding-x-sm:      			1rem;
+$input-btn-font-size-sm:      			$input-btn-font-size;
+$input-btn-line-height-sm:    			2.25rem;
+
+$input-btn-padding-y-lg:      			0;
+$input-btn-padding-x-lg:      			1.5rem;
+$input-btn-font-size-lg:      			$input-btn-font-size;
+$input-btn-line-height-lg:    			3.125rem;
+
+$input-btn-border-width:      			$border-width;
+
+// Buttons
+//
+// For each of Bootstrap's buttons, define text, background, and border color.
+
+$btn-padding-y:               			$input-btn-padding-y;
+$btn-padding-x:               			$input-btn-padding-x;
+$btn-font-size:               			$input-btn-font-size;
+$btn-line-height:             			$input-btn-line-height;
+
+$btn-padding-y-sm:            			$input-btn-padding-y-sm;
+$btn-padding-x-sm:            			$input-btn-padding-x-sm;
+$btn-font-size-sm:            			$input-btn-font-size-sm;
+$btn-line-height-sm:          			$input-btn-line-height-sm;
+
+$btn-padding-y-lg:            			$input-btn-padding-y-lg;
+$btn-padding-x-lg:            			$input-btn-padding-x-lg;
+$btn-font-size-lg:            			$input-btn-font-size-lg;
+$btn-line-height-lg:          			$input-btn-line-height-lg;
+
+$btn-border-width:            			$input-btn-border-width;
+
+$btn-font-weight:             			$font-weight-bold;
+$btn-box-shadow:              			none;
+$btn-focus-width:             			$input-btn-focus-width;
+$btn-focus-box-shadow:        			none;
+$btn-disabled-opacity:        			.1;
+$btn-active-box-shadow:       			none;
+
+$btn-link-disabled-color:     			$gray-600 !default;
+
+$btn-block-spacing-y:         			.5rem !default;
+
+// Allows for customizing button radius independently from global border radius
+$btn-border-radius:           			$border-radius;
+$btn-border-radius-lg:        			$btn-border-radius;
+$btn-border-radius-sm:        			$btn-border-radius;
+
+$btn-transition:              			color .15s ease-out, background-color .15s ease-out, border-color .15s ease-out, box-shadow .15s ease-out;
+
+// Forms
+$label-font-size:						$font-size-base;
+$label-color:							$gray;
+$label-margin-bottom:                   .25rem;
+
+$input-padding-y:                       $input-btn-padding-y;
+$input-padding-x:                       $input-btn-padding-x;
+$input-font-size:                       $font-size-base;
+$input-font-weight:                     $font-weight-base;
+$input-line-height:                     $input-btn-line-height;
+
+$input-padding-y-sm:                    $input-btn-padding-y-sm;
+$input-padding-x-sm:                    $input-btn-padding-x-sm;
+$input-font-size-sm:                    $font-size-sm;
+$input-line-height-sm:                  $input-btn-line-height-sm;
+
+$input-padding-y-lg:                    $input-btn-padding-y-lg;
+$input-padding-x-lg:                    $input-btn-padding-x-lg;
+$input-font-size-lg:                    $font-size-base;
+$input-line-height-lg:                  $input-btn-line-height-lg;
+
+$input-bg:                              transparent;
+$input-disabled-bg:                     transparent;
+
+$input-color:                           $body-color;
+$input-border-color:                    $border-color;
+$input-border-width:                    $input-btn-border-width;
+$input-box-shadow:                      none;
+
+$input-border-radius:                   $border-radius;
+$input-border-radius-lg:                $input-border-radius;
+$input-border-radius-sm:                $input-border-radius;
+
+$input-focus-bg:                        $input-bg;
+$input-focus-border-color:              $black;
+$input-focus-color:                     $input-color;
+$input-focus-width:                     $input-btn-focus-width;
+$input-focus-box-shadow:                $input-btn-focus-box-shadow;
+
+$input-placeholder-color:               rgba($black, .3);
+
+$input-height-border:                   $input-border-width * 2;
+
+$input-height-inner:                    ($input-btn-font-size * $input-btn-line-height) + ($input-btn-padding-y * 2) !default;
+$input-height:                          calc(#{$input-line-height} + #{$input-height-border});
+
+$input-height-inner-sm:                 ($input-btn-font-size-sm * $input-btn-line-height-sm) + ($input-btn-padding-y-sm * 2) !default;
+$input-height-sm:                       calc(#{$input-height-inner-sm} + #{$input-height-border}) !default;
+
+$input-height-inner-lg:                 ($input-btn-font-size-lg * $input-btn-line-height-lg) + ($input-btn-padding-y-lg * 2) !default;
+$input-height-lg:                       calc(#{$input-line-height-lg} + #{$input-height-border});
+
+$input-transition:                      border-color .3s ease-out;

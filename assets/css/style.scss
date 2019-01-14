@@ -1,6 +1,6 @@
-@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/bootstrap-reboot";
 @import "mixins";
-@import "override";
+@import "overrides";
 @import "node_modules/bootstrap/scss/bootstrap";
 @import "woocommerce";
 
@@ -11,7 +11,7 @@ html {
     text-rendering: optimizeLegibility;
 }
 body {
-    letter-spacing: $letter-spacing;
+    letter-spacing: $letter-spacing-base;
 }
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
@@ -22,7 +22,7 @@ h5, h6,
     letter-spacing: $headings-letter-spacing;
 }
 input, textarea, select {
-	letter-spacing: $letter-spacing;
+	letter-spacing: $letter-spacing-base;
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;

@@ -1,7 +1,12 @@
+import 'bootstrap';
+
 ( function( $ ) {
     'use strict';
-    $( '#fengshui-birthday' ).jqxDateTimeInput( {
-        formatString: 'dd/MM/yyyy',
-        showCalendarButton: false
-    } );
+    if( $( '#fengshui-birthday' ).length ) {
+        $( '#fengshui-birthday' ).jqxDateTimeInput( {
+            formatString: 'dd/MM/yyyy',
+            showCalendarButton: false
+        } );
+    }
+    
 } )( jQuery );

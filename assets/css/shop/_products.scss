@@ -2,39 +2,36 @@
  * Products
  */
 ul.products {
-	@include clearfix;
-	@extend .row;
+	@include make-row();
 	margin-top: 0;
 	margin-bottom: 0;
 	padding: 0;
 
 	li.product {
+		@include make-col-ready();
 		list-style: none;
 		position: relative;
+		text-align: center;
+		margin-top: 0;
 		margin-bottom: 4rem;
-
-		@extend .col;
 
 		.woocommerce-loop-product__title,
 		.price,
 		.button {
 			font-family: $font-family-base;
 			font-size: $font-size-base;
-			line-height: 1.3125rem;
+			line-height: 1.375rem;
 			font-weight: $font-weight-base;
-			letter-spacing: $letter-spacing;
-			//text-indent: $letter-spacing;
+			letter-spacing: $letter-spacing-base;
 			margin-bottom: 0;
 			text-transform: none;
 		}
 		.woocommerce-loop-product__title {
-			float: left;
 			margin-top: .875rem;
 		}
 
 		.price {
-			float: right;
-			margin-top: .875rem;
+			display: block;
 		}
 
 		img {
@@ -53,15 +50,22 @@ ul.products {
 			display: inline-block;
 			text-transform: lowercase;
 			border-bottom: 1px solid;
-			display: none;
 		}
 	}
 }
 
-@media screen and (min-width: 48em) {
+@include media-breakpoint-up(sm) {
 	ul.products {
 		li.product {
-			@include make-col(3);
+			@include make-col(6);
+		}
+	}
+}
+
+@include media-breakpoint-up(md) {
+	ul.products {
+		li.product {
+			@include make-col(4);
 		}
 	}
 
@@ -72,14 +76,13 @@ ul.products {
 				width: 100%;
 			}
 		}
-	}
-
+	}	
+}
+@include media-breakpoint-up(lg) {
 	@for $i from 2 through 6 {
-		.columns-#{$i} {
-			ul.products {
-				li.product {
-					@include make-col( 12 / $i );
-				}
+		ul.products.columns-#{$i} {
+			li.product {
+				@include make-col( 12 / $i );
 			}
 		}
 	}

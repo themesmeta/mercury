@@ -19,7 +19,6 @@
 			padding-right: 2rem;
 		}
 		> a, dl.variation, .quantity {
-			//@extend .link-text;
 			display: block;
 			line-height: 1.42;
 		}
@@ -66,7 +65,7 @@
 				opacity: 1;
 				margin: 0;
 				padding: 0;
-				letter-spacing: $letter-spacing * 2;
+				letter-spacing: $letter-spacing-base * 2;
 				text-transform: none;
 				display: none;
 			}

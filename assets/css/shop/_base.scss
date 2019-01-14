@@ -1,0 +1,29 @@
+/**
+ * Base elements
+ */
+input.input-text,
+textarea,
+select {
+    @extend .form-control;
+}
+button.button {
+    @extend .btn;
+    @extend .btn-secondary;
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-base * 4;
+}
+.clear {
+    @extend .clearfix;
+}
+/**
+ * Layout
+ */
+.entry-content {
+    > .woocommerce {
+        /* alignfluid */
+        margin-left: calc(50% - 50vw + 9rem);
+        margin-right: calc(50% - 50vw + 9rem);
+        max-width: 100vw;
+        width: calc(100vw - 2 * 9rem);
+    }
+}

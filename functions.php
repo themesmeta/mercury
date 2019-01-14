@@ -134,18 +134,18 @@ function twentynineteen_scripts() {
 	wp_enqueue_style( 'twentynineteen-main-style', get_template_directory_uri() . '/assets/css/style.css' );
 	wp_enqueue_style( 'twentynineteen-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'twentynineteen-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'twentynineteen-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	// bootstrap
 	wp_enqueue_script( 'bootstrap-bundle', get_template_directory_uri() . '/js/bootstrap/bootstrap.bundle.min.js', array(), '20151215', true );
 	// jqwidgets
-	wp_enqueue_script( 'jqxcore', get_template_directory_uri() . '/js/jqwidgets/jqxcore.js', array(), '20151215', true );
-	wp_enqueue_script( 'jqxdatetimeinput', get_template_directory_uri() . '/js/jqwidgets/jqxdatetimeinput.js', array(), '20151215', true );
-	wp_enqueue_script( 'jqxcalendar', get_template_directory_uri() . '/js/jqwidgets/jqxcalendar.js', array(), '20151215', true );
-	wp_enqueue_script( 'globalize', get_template_directory_uri() . '/js/jqwidgets/globalization/globalize.js', array(), '20151215', true );
+	wp_enqueue_script( 'jqxcore', get_template_directory_uri() . '/assets/js/jqwidgets/jqxcore.js', array(), '20151215', true );
+	wp_enqueue_script( 'jqxdatetimeinput', get_template_directory_uri() . '/assets/js/jqwidgets/jqxdatetimeinput.js', array(), '20151215', true );
+	wp_enqueue_script( 'jqxcalendar', get_template_directory_uri() . '/assets/js/jqwidgets/jqxcalendar.js', array(), '20151215', true );
+	wp_enqueue_script( 'globalize', get_template_directory_uri() . '/assets/js/jqwidgets/globalization/globalize.js', array(), '20151215', true );
 
-	wp_enqueue_script( 'twentynineteen-ajax', get_template_directory_uri() . '/js/ajax.js', array(), '20151215', true );
-	wp_enqueue_script( 'twentynineteen-theme', get_template_directory_uri() . '/js/theme.js', array(), '20151215', true );
+	wp_enqueue_script( 'twentynineteen-ajax', get_template_directory_uri() . '/assets/js/ajax.js', array(), '20151215', true );
+	wp_enqueue_script( 'twentynineteen-theme', get_template_directory_uri() . '/assets/js/script.min.js', array(), '20151215', true );
 
 	wp_enqueue_style( 'twentynineteen-print-style', get_template_directory_uri() . '/print.css', array(), wp_get_theme()->get( 'Version' ), 'print' );
 

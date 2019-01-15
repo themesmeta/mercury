@@ -408,7 +408,6 @@ dl.variation {
  */
 
 .form-row {
-	display: block;
 	position: relative;
 	margin: 0 0 1.375rem;
 	@include media-breakpoint-up(md) {
@@ -430,8 +429,6 @@ dl.variation {
 		}
 	}
 	label {
-		display: block;
-		font-size: $label-font-size;
 		color: $label-color;
 	}
 	input.input-text {

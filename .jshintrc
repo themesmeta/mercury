@@ -25,7 +25,7 @@
     "plusplus"      : false,     // Prohibit use of `++` & `--`.
     "quotmark"      : true,     // Force consistency of quotemarks
     "undef"         : true,     // Require all non-global variables be declared before they are used.
-    "strict"        : true,     // Require `use strict` pragma in every file.
+    "strict"        : false,     // Require `use strict` pragma in every file.
     "trailing"      : true,     // Prohibit trailing whitespaces.
     "unused"        : true,     // Warn when you define and never use your variables
   

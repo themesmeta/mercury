@@ -177,79 +177,7 @@ function blackpearl_woocommerce_related_products_args( $args ) {
 }
 add_filter( 'woocommerce_output_related_products_args', 'blackpearl_woocommerce_related_products_args' );
 
-/**
- * Remove default WooCommerce wrapper.
- */
-remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
-remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
 
-if ( ! function_exists( 'blackpearl_woocommerce_wrapper_before' ) ) {
-	/**
-	 * Before Content.
-	 *
-	 * Wraps all WooCommerce content in wrappers which match the theme markup.
-	 *
-	 * @return void
-	 */
-	function blackpearl_woocommerce_wrapper_before() {
-		?>
-		<div id="primary" class="content-area">
-			<main id="main" class="site-main" role="main">
-				<div class="container-fluid">
-			<?php
-	}
-}
-add_action( 'woocommerce_before_main_content', 'blackpearl_woocommerce_wrapper_before' );
-
-if ( ! function_exists( 'blackpearl_woocommerce_wrapper_after' ) ) {
-	/**
-	 * After Content.
-	 *
-	 * Closes the wrapping divs.
-	 *
-	 * @return void
-	 */
-	function blackpearl_woocommerce_wrapper_after() {
-		?>
-				</div>
-			</main><!-- #main -->
-		</div><!-- #primary -->
-		<?php
-	}
-}
-add_action( 'woocommerce_after_main_content', 'blackpearl_woocommerce_wrapper_after' );
-
-if ( ! function_exists( 'blackpearl_woocommerce_before_shop_loop_open' ) ) {
-	/**
-	 * Before shop loop. Must be after woocommerce-notices-wrapper
-	 *
-	 * Opens the wrapping divs.
-	 *
-	 * @return void
-	 */
-	function blackpearl_woocommerce_before_shop_loop_open() {
-		?>
-		<div class="woocommerce-before-shop-loop">
-		<?php
-	}
-}
-add_action( 'woocommerce_before_shop_loop', 'blackpearl_woocommerce_before_shop_loop_open', 11 );
-
-if ( ! function_exists( 'blackpearl_woocommerce_before_shop_loop_close' ) ) {
-	/**
-	 * Before shop loop. Must be after woocommerce-notices-wrapper
-	 *
-	 * Closes the wrapping divs.
-	 *
-	 * @return void
-	 */
-	function blackpearl_woocommerce_before_shop_loop_close() {
-		?>
-		</div><!-- .woocommerce-before-shop-loop -->
-		<?php
-	}
-}
-add_action( 'woocommerce_before_shop_loop', 'blackpearl_woocommerce_before_shop_loop_close', 99 );
 
 if ( ! function_exists( 'blackpearl_woocommerce_filter_button' ) ) {
 	/**
@@ -268,41 +196,6 @@ if ( ! function_exists( 'blackpearl_woocommerce_filter_button' ) ) {
 	}
 }
 add_action( 'woocommerce_before_shop_loop', 'blackpearl_woocommerce_filter_button', 12 );
-
-if ( ! function_exists( 'blackpearl_woocommerce_shop_loop_wrapper_open' ) ) {
-	/**
-	 * Add custom filter button
-	 *
-	 * @return void
-	 */
-	function blackpearl_woocommerce_shop_loop_wrapper_open() {
-		?>
-		<div class="woocommerce-shop-loop">
-			<div class="woocommerce-shop-loop-sidebar">
-				<?php if ( is_active_sidebar( 'sidebar-shop' ) ) : ?>
-					<div class="widget-column">
-					<?php dynamic_sidebar( 'sidebar-shop' ); ?>
-					</div>
-				<?php endif; ?>
-			</div>
-		<?php
-	}
-}
-add_action( 'woocommerce_before_shop_loop', 'blackpearl_woocommerce_shop_loop_wrapper_open', 100 );
-
-if ( ! function_exists( 'blackpearl_woocommerce_shop_loop_wrapper_close' ) ) {
-	/**
-	 * Add custom filter button
-	 *
-	 * @return void
-	 */
-	function blackpearl_woocommerce_shop_loop_wrapper_close() {
-		?>
-		</div>
-		<?php
-	}
-}
-add_action( 'woocommerce_after_shop_loop', 'blackpearl_woocommerce_shop_loop_wrapper_close', 1 );
 
 /**
  * Sample implementation of the WooCommerce Mini Cart.

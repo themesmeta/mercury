@@ -57,7 +57,7 @@ add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 function blackpearl_woocommerce_get_image_size_gallery_thumbnail( $size ) {
 	return array(
 		'width'  => 192,
-		'height' => 256,
+		'height' => 192,
 		'crop'   => 1,
 	);
 }
@@ -66,7 +66,7 @@ add_filter( 'woocommerce_get_image_size_gallery_thumbnail', 'blackpearl_woocomme
 function blackpearl_woocommerce_get_image_size_single( $size ) {
 	return array(
 		'width'  => 720,
-		'height' => 960,
+		'height' => 720,
 		'crop'   => 1,
 	);
 }
@@ -94,9 +94,9 @@ function blackpearl_woocommerce_widgets_init() {
 
 	register_sidebar(
 		array(
-			'name'         => __( 'Shop', 'blackpearl' ),
+			'name'         => __( 'Shop', 'twentynineteen' ),
 			'id'           => 'sidebar-shop',
-			'description'  => __( 'Add widgets here to appear in your shop sidebar.', 'blackpearl' ),
+			'description'  => __( 'Add widgets here to appear in your shop sidebar.', 'twentynineteen' ),
 			'before_title' => '<h3 class="widget-title">',
 			'after_title'  => '</h3>',
 		)
@@ -104,9 +104,9 @@ function blackpearl_woocommerce_widgets_init() {
 
 	register_sidebar(
 		array(
-			'name'          => __( 'Cart Left', 'blackpearl' ),
+			'name'          => __( 'Cart Left', 'twentynineteen' ),
 			'id'            => 'sidebar-cart-left',
-			'description'   => __( 'Add widgets here to appear in your left sidebar of cart page.', 'blackpearl' ),
+			'description'   => __( 'Add widgets here to appear in your left sidebar of cart page.', 'twentynineteen' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h3 class="widget-title">',
@@ -116,9 +116,9 @@ function blackpearl_woocommerce_widgets_init() {
 
 	register_sidebar(
 		array(
-			'name'          => __( 'Cart Right', 'blackpearl' ),
+			'name'          => __( 'Cart Right', 'twentynineteen' ),
 			'id'            => 'sidebar-cart-right',
-			'description'   => __( 'Add widgets here to appear in your right sidebar of cart page.', 'blackpearl' ),
+			'description'   => __( 'Add widgets here to appear in your right sidebar of cart page.', 'twentynineteen' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h3 class="widget-title">',
@@ -188,8 +188,9 @@ if ( ! function_exists( 'blackpearl_woocommerce_filter_button' ) ) {
 	function blackpearl_woocommerce_filter_button() {
 		?>
 		<div class="woocommerce-filter-button">
-			<a href="javascript:void(0);" class="btn btn-outline-dark">
-				<?php echo esc_html__( 'Show filter', 'blackpearl' ); ?>
+			<a href="#" class="d-md-none" data-toggle="modal" data-target="#products-filter">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z"/></svg>
+				<span><?php echo esc_html__( 'Lọc sản phẩm', 'twentynineteen' ); ?></span>
 			</a>
 		</div>
 		<?php
@@ -238,11 +239,11 @@ if ( ! function_exists( 'blackpearl_woocommerce_cart_link' ) ) {
 	 */
 	function blackpearl_woocommerce_cart_link() {
 		?>
-		<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'blackpearl' ); ?>">
+		<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'twentynineteen' ); ?>">
 			<?php
 			$item_count_text = sprintf(
 				/* translators: number of items in the mini cart. */
-				_n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'blackpearl' ),
+				_n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'twentynineteen' ),
 				WC()->cart->get_cart_contents_count()
 			);
 			?>
@@ -413,7 +414,7 @@ if ( ! function_exists( 'blackpearl_woocommerce_cart_item_remove_link' ) ) {
 	 * @return string
 	 */
 	function blackpearl_woocommerce_cart_item_remove_link( $html, $cart_item_key ) {
-		return str_replace( '&times;', esc_html__( 'Remove', 'blackpearl' ), $html );
+		return str_replace( '&times;', esc_html__( 'Xóa', 'twentynineteen' ), $html );
 	}
 }
 add_filter( 'woocommerce_cart_item_remove_link', 'blackpearl_woocommerce_cart_item_remove_link', 10, 2 );

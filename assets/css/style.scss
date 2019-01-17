@@ -36,9 +36,18 @@ img {
 	width: 100%;
 	height: auto;
 }
-.container-fluid {
-    padding-left: $grid-gutter-width * 3;
-    padding-right: $grid-gutter-width * 3;
+
+@include media-breakpoint-up(md) {
+    .container-fluid {
+        padding-left: $grid-gutter-width * 2;
+        padding-right: $grid-gutter-width * 2;
+    }
+}
+@include media-breakpoint-up(lg) {
+    .container-fluid {
+        padding-left: $grid-gutter-width * 3;
+        padding-right: $grid-gutter-width * 3;
+    }
 }
 
 // Site header
@@ -225,6 +234,66 @@ img {
 .site-footer {
     color: $white;
     background: $black;
+}
+
+.modal.drawer {
+    &.show {
+		.modal-dialog {
+			transform: translateX(0) !important;
+		}
+    }
+    &.drawer-left {
+		.modal-dialog {
+			left: 0;
+			transform: translateX(-100%) !important;
+		}
+		&.show {
+			.modal-dialog {
+				transform: translateX(0) !important;
+			}
+		}
+    }
+    .modal-dialog {
+		position: absolute;
+        right: 0;
+        max-width: 100%;
+		width: $modal-drawer-width;
+		height: 100%;
+		margin: 0;
+		transform: translateX(100%) !important;
+		.modal-content {
+			height: 100%;
+			border: 0;
+			// Just in case the modal-body is longer than 100vh
+			.modal-body {
+				max-height: calc(100vh - #{$modal-drawer-header-height});
+				padding-top: $modal-inner-padding / 2;
+				padding-bottom: $modal-drawer-header-height;
+				overflow-y: auto;
+			}
+			.modal-close {
+				text-align: right;
+				padding: $modal-inner-padding/2 0;
+				border-bottom: 1px solid $border-color;
+			}
+		}
+    }
+    .modal-content {
+      	border-radius: 0;
+    }
+    .modal-footer {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		border: 0;
+		border-radius: 0;
+    }
+}
+.modal-open .drawer {
+	  overflow-y: hidden;
+}
+.admin-bar .drawer {
+    top: 32px;
 }
 
 /*--------------------------------------------------------------

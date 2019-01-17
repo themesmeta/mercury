@@ -9,11 +9,16 @@ ul.products {
 
 	li.product {
 		@include make-col-ready();
+		@include make-col(6);
 		list-style: none;
 		position: relative;
 		text-align: center;
 		margin-top: 0;
 		margin-bottom: 4rem;
+
+		@include media-breakpoint-up(md) {
+			@include make-col(4);
+		}
 
 		.woocommerce-loop-product__title,
 		.price,
@@ -54,30 +59,7 @@ ul.products {
 	}
 }
 
-@include media-breakpoint-up(sm) {
-	ul.products {
-		li.product {
-			@include make-col(6);
-		}
-	}
-}
 
-@include media-breakpoint-up(md) {
-	ul.products {
-		li.product {
-			@include make-col(4);
-		}
-	}
-
-	.columns-1 {
-		ul.products {
-			li.product {
-				float: none;
-				width: 100%;
-			}
-		}
-	}	
-}
 @include media-breakpoint-up(lg) {
 	@for $i from 2 through 6 {
 		ul.products.columns-#{$i} {

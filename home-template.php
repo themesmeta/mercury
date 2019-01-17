@@ -20,11 +20,11 @@ get_header();
 					<h2 class="mb-1"><?php _e( 'Phong thủy', 'twentynineteen' ); ?></h2>
 					<h5><?php _e( 'Bắt đầu hành trình khám phá bản thân', 'twentynineteen' ); ?></h5>
 					<div class="form-fengshui-discover row mt-lg-4 mt-md-2">
-						<p class="col-6 form-row form-row-first validate-required" id="fengshui-birthday-field">
+						<p class="col-md-6 form-row form-row-first text-left validate-required" id="fengshui-birthday-field">
 							<label for="fengshui-birthday" class=""><?php _e( 'Ngày tháng năm sinh – dương lịch', 'twentynineteen' ); ?>&nbsp;<abbr class="required" title="required">*</abbr></label>
 							<input type="text" class="" name="fengshui-birthday" id="fengshui-birthday" placeholder="" value="">
 						</p>
-						<p class="col-6 form-row form-row-last validate-required" id="fengshui-gender-field">
+						<p class="col-md-6 form-row form-row-last text-left validate-required" id="fengshui-gender-field">
 							<label for="fengshui-gender" class=""><?php _e( 'Giới tính', 'twentynineteen' ); ?>&nbsp;<abbr class="required" title="required">*</abbr></label>
 							<select type="text" class="form-control" name="fengshui-gender" id="fengshui-gender">
 								<option value="male"><?php _e( 'Nam', 'twentynineteen' ); ?></option>

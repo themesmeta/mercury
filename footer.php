@@ -31,6 +31,67 @@
 	</footer><!-- #colophon -->
 
 </div><!-- #page -->
+<div id="mobile-menu" class="modal fade drawer drawer-left" tabindex="-1" role="dialog" aria-labelledby="mobileMenuModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-body">
+				<div class="modal-close">
+					<a href="javascript:void(0);" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true"><?php echo __( 'Đóng', 'twentynineteen' ); ?></span>
+					</a>
+				</div>
+				<?php
+				if ( has_nav_menu( 'menu-1' ) ) :
+					wp_nav_menu(
+						array(
+							'theme_location' => 'menu-1',
+							'container'      => '',
+							'menu_class'     => 'nav flex-column',
+						)
+					);
+				endif;
+				?>
+			</div>
+		</div>
+	</div>
+</div>
+<?php if ( class_exists( 'WooCommerce' ) ) : ?>
+
+<div id="products-filter" class="modal fade drawer drawer-left" tabindex="-1" role="dialog" aria-labelledby="productsFilterModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-body">
+				<div class="modal-close">
+					<a href="javascript:void(0);" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true"><?php echo __( 'Đóng', 'twentynineteen' ); ?></span>
+					</a>
+				</div>
+				<?php if ( is_active_sidebar( 'sidebar-shop' ) ) : ?>
+					<div class="widget-column">
+					<?php dynamic_sidebar( 'sidebar-shop' ); ?>
+					</div>
+				<?php endif; ?>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="mini-cart" class="modal fade drawer" tabindex="-1" role="dialog" aria-labelledby="minicartModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-body">
+				<div class="modal-close">
+					<a href="javascript:void(0);" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true"><?php echo __( 'Đóng', 'twentynineteen' ); ?></span>
+					</a>
+				</div>
+				<?php the_widget( 'WC_Widget_Cart', 'title=' ); ?>
+			</div>
+		</div>
+	</div>
+</div>
+
+<?php endif; ?>
 
 <?php wp_footer(); ?>
 

@@ -28,7 +28,7 @@
 				<?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
 			</div><!-- .layout-wrap -->
 
-			<?php if ( is_singular() && twentynineteen_can_show_post_thumbnail() ) : ?>
+			<?php if ( is_singular() && ! is_singular( 'product' ) && twentynineteen_can_show_post_thumbnail() ) : ?>
 				<div class="hentry">
 					<?php the_post(); ?>
 					<div class="entry-header">

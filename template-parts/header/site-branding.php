@@ -11,13 +11,18 @@
 	<div class="site-branding__top">
 		<div class="site-subnavigation">
 			<ul class="list-unstyled float-left text-left">
-				<li class="d-inline-block pr-2">
+				<li class="d-inline-block d-md-none">
+					<a href="#" data-toggle="modal" data-target="#mobile-menu">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+					</a>
+				</li>
+				<li class="pr-2 d-none d-md-inline-block">
 					<a href="#">
 						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zM7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 2.88-2.88 7.19-5 9.88C9.92 16.21 7 11.85 7 9z"/><circle cx="12" cy="9" r="2.5"/></svg>
 						<span><?php echo esc_html( 'Danh sách cửa hàng', 'twentynineteen' ); ?></span>
 					</a>
 				</li>
-				<li class="d-inline-block">
+				<li class="d-none d-md-inline-block">
 					<a href="#">
 						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M11 23.59v-3.6c-5.01-.26-9-4.42-9-9.49C2 5.26 6.26 1 11.5 1S21 5.26 21 10.5c0 4.95-3.44 9.93-8.57 12.4l-1.43.69zM11.5 3C7.36 3 4 6.36 4 10.5S7.36 18 11.5 18H13v2.3c3.64-2.3 6-6.08 6-9.8C19 6.36 15.64 3 11.5 3zm-1 11.5h2v2h-2zm2-1.5h-2c0-3.25 3-3 3-5 0-1.1-.9-2-2-2s-2 .9-2 2h-2c0-2.21 1.79-4 4-4s4 1.79 4 4c0 2.5-3 2.75-3 5z"/></svg>
 						<span><?php echo esc_html( 'Trợ giúp', 'twentynineteen' ); ?></span>
@@ -25,16 +30,16 @@
 				</li>
 			</ul>
 			<ul class="list-unstyled float-right text-right">
-				<li class="d-inline-block pr-2">
+				<li class="pr-2 d-none d-md-inline-block">
 					<a href="#">
 						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M12 5.9c1.16 0 2.1.94 2.1 2.1s-.94 2.1-2.1 2.1S9.9 9.16 9.9 8s.94-2.1 2.1-2.1m0 9c2.97 0 6.1 1.46 6.1 2.1v1.1H5.9V17c0-.64 3.13-2.1 6.1-2.1M12 4C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 9c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4z"/></svg>
 						<span><?php echo esc_html( 'Đăng nhập', 'twentynineteen' ); ?><span>
 					</a>
 				</li>
 				<li class="d-inline-block">
-					<a href="#">
+					<a href="#" data-toggle="modal" data-target="#mini-cart">
 						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M22 9h-4.79l-4.38-6.56c-.19-.28-.51-.42-.83-.42s-.64.14-.83.43L6.79 9H2c-.55 0-1 .45-1 1 0 .09.01.18.04.27l2.54 9.27c.23.84 1 1.46 1.92 1.46h13c.92 0 1.69-.62 1.93-1.46l2.54-9.27L23 10c0-.55-.45-1-1-1zM12 4.8L14.8 9H9.2L12 4.8zM18.5 19l-12.99.01L3.31 11H20.7l-2.2 8zM12 13c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
-						<span><?php echo esc_html( '2 / 1.900.000 VND', 'twentynineteen' ); ?></span>
+						<span><?php echo WC()->cart->get_cart_contents_count() . ' / ' . WC()->cart->get_cart_total(); ?></span>
 					</a>
 				</li>
 			</ul>
@@ -61,7 +66,7 @@
 			</a>
 		</div>
 	</div>
-	<div class="site-branding__bottom">
+	<div class="site-branding__bottom d-none d-md-block">
 		<?php if ( has_nav_menu( 'menu-1' ) ) : ?>
 			<nav id="site-navigation" class="main-navigation navbar" aria-label="<?php esc_attr_e( 'Primary Menu', 'twentynineteen' ); ?>">
 				<?php

@@ -238,7 +238,7 @@ h1, .h1 { font-size: 2.625rem; }
 
 h2, .h2 { font-size: 2.25rem; }
 
-h3, .h3 { font-size: 1.75rem; }
+h3, .h3 { font-size: 1.625rem; }
 
 h4, .h4 { font-size: 1.375rem; }
 
@@ -3877,6 +3877,8 @@ ul.products li.product .button { position: relative; top: -2px; display: inline-
 
 .single-product div.product::after { display: block; clear: both; content: ""; }
 
+@media (min-width: 992px) { .single-product div.product { padding-left: 3.75rem; padding-right: 3.75rem; } }
+
 .single-product div.product > * { position: relative; width: 100%; padding-right: 0.75rem; padding-left: 0.75rem; }
 
 .single-product div.product .woocommerce-product-gallery { position: relative; }
@@ -3927,7 +3929,7 @@ ul.products li.product .button { position: relative; top: -2px; display: inline-
 
 @media (min-width: 1200px) { .single-product div.product .summary { margin-left: 8.33333%; } }
 
-.single-product div.product .summary .product_title { text-align: left; font-size: 1.75rem; }
+.single-product div.product .summary .product_title { font-size: 1.625rem; }
 
 .single-product div.product .summary .price { font-size: 1.375rem; }
 
@@ -4301,6 +4303,8 @@ input, textarea, select { letter-spacing: 0.02em; -webkit-appearance: none; -moz
 textarea { line-height: inherit !important; padding-top: .75rem !important; padding-bottom: .75rem !important; }
 
 img { width: 100%; height: auto; }
+
+.container-fluid { padding-left: 1.5rem; padding-right: 1.5rem; }
 
 @media (min-width: 768px) { .container-fluid { padding-left: 3rem; padding-right: 3rem; } }
 

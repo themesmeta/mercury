@@ -7,6 +7,10 @@
 		@include make-row();
 		position: relative;
 		padding-top: 3rem;
+		@include media-breakpoint-up(lg) {
+			padding-left: $grid-gutter-width * 2.5;
+			padding-right: $grid-gutter-width * 2.5;
+		}
 		> * {
 			@include make-col-ready();
 		}
@@ -106,7 +110,6 @@
 				@include make-col-offset(1);
 			}
 			.product_title {
-				text-align: left;
 				font-size: $h3-font-size;
 			}
 			.price {

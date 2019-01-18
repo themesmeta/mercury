@@ -45,8 +45,8 @@ img {
 }
 @include media-breakpoint-up(lg) {
     .container-fluid {
-        padding-left: $grid-gutter-width * 3;
-        padding-right: $grid-gutter-width * 3;
+        padding-left: $grid-gutter-width * 2.5;
+        padding-right: $grid-gutter-width * 2.5;
     }
 }
 

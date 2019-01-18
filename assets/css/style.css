@@ -4304,7 +4304,7 @@ img { width: 100%; height: auto; }
 
 @media (min-width: 768px) { .container-fluid { padding-left: 3rem; padding-right: 3rem; } }
 
-@media (min-width: 992px) { .container-fluid { padding-left: 4.5rem; padding-right: 4.5rem; } }
+@media (min-width: 992px) { .container-fluid { padding-left: 3.75rem; padding-right: 3.75rem; } }
 
 .site-header .site-branding { padding-top: .875rem; padding-bottom: .625rem; }
 

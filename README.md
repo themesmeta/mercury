@@ -1,6 +1,6 @@
 # Mercury
 
-[![Build Status](https://travis-ci.org/themesmeta/mercury.svg?branch=master)](https://travis-ci.org/themesmeta/mercury)
+[![Build Status](https://travis-ci.com/themesmeta/mercury.svg?branch=master)](https://travis-ci.org/themesmeta/mercury)
 
 **Contributors:** Themesmeta  
 **Version:** 1.0  
@@ -22,5 +22,3 @@ Thememeta. All rights reserved.
 
 ### X.X
 * Released: XX-XX-XXXX
-
-Initial release

@@ -8,10 +8,10 @@
   "author": "themesmeta",
   "homepage": "https://github.com/themesmeta/mercury#readme",
   "devDependencies": {
-    "@babel/core": "^7.1.6",
-    "@babel/preset-env": "^7.1.6",
-    "babel-loader": "^8.0.4",
-    "bootstrap": "^4.2.1",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "babel-loader": "^8.0.5",
+    "bootstrap": "^4.3.0",
     "dom-css": "^2.1.0",
     "gsap": "^2.0.2",
     "gulp": "^4.0.0",
@@ -22,10 +22,10 @@
     "gulp-sourcemaps": "^2.6.4",
     "ify-loader": "^1.1.0",
     "jquery": "^3.3.1",
-    "popper.js": "^1.14.6",
+    "popper.js": "^1.14.7",
     "smooth-scrolling": "^2.3.11",
-    "swiper": "^4.4.5",
-    "webpack": "^4.26.1",
-    "webpack-stream": "^5.1.1"
+    "swiper": "^4.4.6",
+    "webpack": "^4.29.3",
+    "webpack-stream": "^5.2.1"
   }
 }
